@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TicTacToe</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="player1-name">Player 1:</label>
+            <input type="text" id="player1-name" placeholder="Enter Player 1 Name" required>
+
+            <label for="player2-name">Player 2:</label>
+            <input type="text" id="player2-name" placeholder="Enter Player 2 Name" required>
+
+            <button type="submit" onclick="index.html">Start Game</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name1 = document.getElementById('player1-name').value;
+            const name2 = document.getElementById('player2-name').value;
+            window.location.href = `index.html?name1=${encodeURIComponent(name1)}&name2=${encodeURIComponent(name2)}`;
+        });
+    </script>
+</body>
+
+</html>
